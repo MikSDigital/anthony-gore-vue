@@ -1,11 +1,18 @@
 <template>
    <div>
-       <p>Hello from VueJs</p>
+       <p>{{ msg }}</p>
    </div>
 </template>
 <script>
    export default {
-       name: "example"
+       data() {
+          return {
+                msg: 'Hello World!'
+            };
+       },
+       created() {
+           console.log(this.$moment);
+       }
    }
 </script>
 <style scoped>

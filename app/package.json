@@ -17,6 +17,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "moment-timezone": "^0.5.23",
         "vue": "^2.6.10"
     }
 }
