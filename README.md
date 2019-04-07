@@ -27,4 +27,10 @@ login using the following credentials:
 Login: `foo`
 Password: `bar`
 
-00127
+```bash
+sudo /etc/init.d/apache2 stop
+```
+
+to fix " Cannot start service" error
+
+00128
