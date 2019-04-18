@@ -44,7 +44,6 @@ body {
   display: flex;
   justify-content: center;
 
-
   // Test
   background-color: $gallery;
 
@@ -77,7 +76,7 @@ body {
       div:last-child {
         font-weight: bold;
         button {
-          color: $dusty-gray;
+          color: $pink;
           font-size: 1rem;
           padding: 0;
           width: 20px;
@@ -256,7 +255,5 @@ body {
         }
       }
     }
-
   }
-
 }
