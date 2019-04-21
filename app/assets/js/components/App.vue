@@ -1,8 +1,10 @@
 <template>
+<div id="wrapper">
    <div id="calendar">
        <div v-for="week in weeks" class="calendar-week">
            <calendar-day v-for="day in week" v-bind:day="day" v-bind:key="day.id"></calendar-day>
        </div>
+   </div>
    </div>
 </template>
 <script>

@@ -47,7 +47,7 @@ body {
   // Test
   background-color: $gallery;
 
-  #app {
+  #app, #wrapper {
     display: block !important;
     flex-basis: 1000px;
 
