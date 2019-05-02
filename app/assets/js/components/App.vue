@@ -25,13 +25,13 @@
     import CalendarDay from './CalendarDay.vue';
 
     export default {
-       data() {
-          return {
-              month: 4,
-              year: 2019
-            };
-       },
        computed: {
+           month() {
+               return this.$store.state.currentMonth;
+           },
+           year() {
+               return this.$store.state.currentYear;
+           },
            days() {
                const SUNDAY = 0;
                const MONDAY = 1;
