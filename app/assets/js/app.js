@@ -1,8 +1,7 @@
 import Vue from 'vue';
 import '../css/style.scss';
 
-import Vuex from 'vuex';
-Vue.use(Vuex);
+import store from './store';
 
 import moment from 'moment-timezone';
 
@@ -19,11 +18,6 @@ const app = new Vue({
     components: {
         App
     },
-    store: {
-        state: {
-            currentYear: 2019,
-            currentMonth: 5
-        }
-    },
+    store,
     render: h => h(App)
 });
