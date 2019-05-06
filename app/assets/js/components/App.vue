@@ -29,6 +29,8 @@
        </div>
    </div>
 
+    <event-form></event-form>
+
 </div>
 </template>
 
@@ -36,6 +38,7 @@
 
     import CalendarDay from './CalendarDay.vue';
     import CurrentMonth from "./CurrentMonth";
+    import EventForm from "./EventForm";
 
     export default {
        computed: {
@@ -98,6 +101,7 @@
            }
        },
        components: {
+           EventForm,
            CurrentMonth,
            CalendarDay
        }
