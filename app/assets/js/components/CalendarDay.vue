@@ -1,5 +1,10 @@
 <template>
-    <div :class="classObject">{{ day.format('D') }}</div>
+    <div :class="classObject" @click="captureClick">
+        {{ day.format('D') }}
+        <ul class="event-list">
+            <li v-for="event in events">{{ event.description }}</li>
+        </ul>
+    </div>
 </template>
 
 <script>
@@ -14,6 +19,21 @@
                     today,
                     past: this.day.isSameOrBefore(this.$moment(), 'day') && !today,
                 }
+            },
+            events() {
+                let mockData = [
+                    {description: 'Random event 1', date: this.$moment()},
+                    {description: 'Random event 2', date: this.$moment()},
+                    {description: 'Random event 3', date: this.$moment('2019-05-09', 'YYYY-MM-DD')},
+                ];
+
+                return mockData.filter(event => event.date.isSame(this.day, 'day'));
+            }
+        },
+        methods: {
+            captureClick(event) {
+                this.$store.commit('eventFormPos', {x: event.clientX, y: event.clientY});
+                this.$store.commit('eventFormActive', true);
             }
         }
     }
