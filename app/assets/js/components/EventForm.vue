@@ -1,6 +1,12 @@
 <template>
     <div id="event-form" :class="{ active:active }" :style="{ top:top, left:left }">
         <h4>Add an event</h4>
+        <div class="text">
+            <input type="text" v-model="description">
+        </div>
+        <div class="buttons">
+            <button @click="create">Create</button>
+        </div>
         <button class="close-button" @click="close">&#10005</button>
     </div>
 </template>
@@ -8,6 +14,11 @@
 <script>
     export default {
         name: "EventForm",
+        data() {
+            return {
+                description: ''
+            }
+        },
         computed: {
             top() {
                 return `${this.$store.state.eventFormPosY}px`;
@@ -22,6 +33,9 @@
         methods: {
             close() {
                 this.$store.commit('eventFormActive', false);
+            },
+            create() {
+                this.$store.commit('addEvent', this.description)
             }
         }
     }
